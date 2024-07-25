@@ -13,7 +13,7 @@ Contiene codigo C# para API REST:
 * Swagger
 * Entity Framework
 * Fluent API
-Perfil profesional: [ Linkedin ](https://www.linkedin.com/in/pedro-jose-castro-colon "Perfil profesional")
+* Perfil profesional: [ Linkedin ](https://www.linkedin.com/in/pedro-jose-castro-colon "Perfil profesional")
 
 ## En este repo podras encontrar contenido C#
 * API REST
