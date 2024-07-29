@@ -3,7 +3,7 @@
 * API REST                                                      
 ****************************************************************************************************
 * Unidad        : <.NET/C# controller AsignaturasController>                                                                      
-* DescripciÓn   : <Logica de negocio para el manejo de los servicios AsignaturasController>                                                      
+* DescripciÓn   : <Logica de negocio para el manejo de los servicios AsignaturasController return>                                                      
 * Autor         : <Pedro Castro>
 * Fecha         : <16-07-2024>                                                                             
 ***************************************************************************************************/
@@ -26,12 +26,14 @@ namespace CampusVirtualWebApi.Controllers
             asignaturaService = serviceAsignatura;
         }
 
+        ///Funcion que retornar la informacion de la asignatura
         [HttpGet]
         public IActionResult Get()
         {
             return Ok(asignaturaService.Get());
         }
 
+        ///Funcion para el registro de la informacion de la asignatura
         [HttpPost]
         public IActionResult Post([FromBody] Asignaturas asignaturas)
         {
@@ -39,6 +41,7 @@ namespace CampusVirtualWebApi.Controllers
             return Ok();
         }
 
+        ///Funcion para la actualizacion de la informacion de la asignatura
         [HttpPut("{id}")]
         public IActionResult Put(Guid id, [FromBody] Asignaturas asignaturas)
         {
@@ -46,6 +49,7 @@ namespace CampusVirtualWebApi.Controllers
             return Ok();
         }
 
+        ///Funcion para eliminar la asignatura
         [HttpDelete("{id}")]
         public IActionResult Delete(Guid id)
         {

@@ -5,7 +5,9 @@
 * Unidad        : <.NET/C# Middleware>                                                                      
 * DescripciÓn   : <Logica de negocio para realizar el llamado de los Middleware>                                                      
 * Autor         : <Pedro Castro>
-* Fecha         : <16-07-2024>                                                                             
+* Fecha         : <16-07-2024>
+* ===========   ============       ========================================================================= 
+* 26/07/2016   Pedro Castro         1. Documentacion
 ***************************************************************************************************/
 #endregion Documentación
 

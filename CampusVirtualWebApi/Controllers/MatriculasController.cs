@@ -26,12 +26,14 @@ namespace CampusVirtualWebApi.Controllers
             matriculasService = serviceMatricula;
         }
 
+        ///Funcion para la obtencion de informacion de las matriculas
         [HttpGet]
         public IActionResult Get()
         {
             return Ok(matriculasService.Get());
         }
 
+        ///Funcion para el registro de informacion de las matriculas
         [HttpPost]
         public IActionResult Post([FromBody] Matriculas serviceMatricula)
         {
@@ -39,6 +41,7 @@ namespace CampusVirtualWebApi.Controllers
             return Ok();
         }
 
+        ///Funcion para la actualizacion de informacion de las matriculas
         [HttpPut("{id}")]
         public IActionResult Put(Guid id, [FromBody] Matriculas matriculas)
         {
@@ -46,6 +49,7 @@ namespace CampusVirtualWebApi.Controllers
             return Ok();
         }
 
+        ///Funcion para la eliminacion de las matriculas
         [HttpDelete("{id}")]
         public IActionResult Delete(Guid id)
         {

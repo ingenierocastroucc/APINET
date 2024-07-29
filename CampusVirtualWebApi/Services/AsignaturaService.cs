@@ -18,22 +18,27 @@ namespace CampusVirtualWebApi.Services
     {
         AsignaturaContext context;
 
+        
+        ///Acceso a la base de datos
         public AsignaturaService(AsignaturaContext dbcontext)
         { 
                context = dbcontext;
         }
-
+ 
+        ///Obtencion del listado de saignaturas
         public IEnumerable<Asignaturas> Get()
         {
             return context.AsignaturasVirtual;
         }
 
+        ///Servicio de registro de informacion, para las asignaturas 
         public async Task Save(Asignaturas asignaturas)
         { 
             context.Add(asignaturas);
             await context.SaveChangesAsync();
         }
 
+        ///Servicio de actualizacion de informacion, de las asignaturas 
         public async Task Update(Guid id, Asignaturas asignaturas)
         {
             var asignaturasUpdate = context.AsignaturasVirtual.Find(id);
@@ -48,6 +53,7 @@ namespace CampusVirtualWebApi.Services
             }
         }
 
+        ///Servicio para eliminar asignatura 
         public async Task Delete(Guid id)
         {
             var asignaturasDelete = context.AsignaturasVirtual.Find(id);
@@ -61,6 +67,7 @@ namespace CampusVirtualWebApi.Services
 
     }
 
+    //Llamado de los servicios
     public interface IAsignaturaService
     {
         IEnumerable<Asignaturas> Get();

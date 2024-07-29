@@ -18,22 +18,26 @@ namespace CampusVirtualWebApi.Services
     {
         AsignaturaContext context;
 
+        //Acceso a la base de datos
         public MatriculasService(AsignaturaContext dbcontext)
         { 
                context = dbcontext;
         }
 
+        ///Servicio para la obtencion de informacion de la matricula
         public IEnumerable<Matriculas> Get()
         {
             return context.MatriculaVirtual;
         }
 
+        ///Servicio para registro de informacion de la matricula
         public async Task Save(Matriculas matriculas)
         { 
             context.Add(matriculas);
             await context.SaveChangesAsync();
         }
 
+        ///Servicio para la actualizacion de informacion de la matricula
         public async Task Update(Guid id, Matriculas matriculas)
         {
             var matricualsUpdate = context.MatriculaVirtual.Find(id);
@@ -48,6 +52,7 @@ namespace CampusVirtualWebApi.Services
             }
         }
 
+        ///Servicio para eliminar matricula
         public async Task Delete(Guid id)
         {
             var matriculasDelete = context.MatriculaVirtual.Find(id);
@@ -61,6 +66,7 @@ namespace CampusVirtualWebApi.Services
 
     }
 
+    ///Llamado de los servicios
     public interface IMatriculasService
     {
         IEnumerable<Matriculas> Get();

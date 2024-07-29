@@ -5,7 +5,9 @@
 * Unidad        : <.NET/C# API REST>                                                                      
 * DescripciÓn   : <Logica de negocio para realizar el llamado de los servicios y la conexion a base de datos>                                                      
 * Autor         : <Pedro Castro>
-* Fecha         : <16-07-2024>                                                                             
+* Fecha         : <16-07-2024>    
+* ===========   ============       ========================================================================= 
+* 26/07/2016   Pedro Castro         1. Documentacion
 ***************************************************************************************************/
 #endregion Documentación
 

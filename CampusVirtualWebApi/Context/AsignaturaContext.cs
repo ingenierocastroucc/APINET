@@ -16,11 +16,24 @@ namespace CampusVirtualWeb.Context
 {
     public class AsignaturaContext : DbContext
     {
+        /// <summary>
+        /// Propiedad para la obtencion del Dbset de las asignaturas
+        /// </summary>
         public DbSet<Asignaturas> AsignaturasVirtual { get; set; }
+
+        /// <summary>
+        /// Propiedad para la obtencion del Dbset de las matriculas
+        /// </summary>
         public DbSet<Matriculas> MatriculaVirtual { get; set; }
 
+        /// <summary>
+        /// Propiedad para la creacion de la base de datos
+        /// </summary>
         public AsignaturaContext(DbContextOptions<AsignaturaContext> options) : base(options) { }
 
+        /// <summary>
+        /// Propiedad para el seteo de data
+        /// </summary>
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             List<Asignaturas> asignaturasInit = new List<Asignaturas>();
@@ -41,6 +54,9 @@ namespace CampusVirtualWeb.Context
             }
             );
 
+            /// <summary>
+            /// Propiedad para el seteo de data
+            /// </summary>
             List<Matriculas> matriculasInit = new List<Matriculas>();
             matriculasInit.Add(new Matriculas() { MatriculaId = Guid.Parse("d97c9709-1b2e-4084-aee3-17094f61bf03"), NombreAsignatura = "Calculo", Profesor = "Pedro Diaz", TipoInscripcion = "Virtual", Semestreinscripcion = "Primero", AsignaturaId = Guid.Parse("d97c9709-1b2e-4084-aee3-17094f61bf74"), PrioridadMatricula = Prioridad.Media, FechaRegistro = DateTime.Now });
             matriculasInit.Add(new Matriculas() { MatriculaId = Guid.Parse("d97c9709-1b2e-4084-aee3-17094f61bf04"), NombreAsignatura = "Ingles", Profesor = "Luisa Fernandez", TipoInscripcion = "Virtual", Semestreinscripcion = "Primero", AsignaturaId = Guid.Parse("d97c9709-1b2e-4084-aee3-17094f61bf02"), PrioridadMatricula = Prioridad.Media, FechaRegistro = DateTime.Now });

@@ -3,7 +3,7 @@
 * API REST                                                      
 ****************************************************************************************************
 * Unidad        : <.NET/C# controller por defecto>                                                                      
-* Descripci”n   : <Logica de negocio para el controller por defecto>                                                      
+* Descripci”n   : <Logica de negocio para el controller por defecto, manejo de rutas y dataannotetion>                                                      
 * Autor         : <Pedro Castro>
 * Fecha         : <16-07-2024>                                                                             
 ***************************************************************************************************/
@@ -13,6 +13,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace CampusVirtualWebApi.Controllers
 {
+    /// Manejo de rutas, dataannotetion y swagger
     [ApiController]
     [Route("api/[controller]")]
     public class WeatherForecastController : ControllerBase
@@ -30,6 +31,7 @@ namespace CampusVirtualWebApi.Controllers
         {
             _logger = logger;
 
+            ///Asignacion de rango
             if (ListWeatherForecast.Count == 0)
             {
                 ListWeatherForecast = Enumerable.Range(1, 5).Select(index => new WeatherForecast
@@ -42,6 +44,7 @@ namespace CampusVirtualWebApi.Controllers
             }
         }
 
+        /// Manejo de rutas, dataannotetion y swagger
         [HttpGet]
         [Route("GetWeatherForecast")]
         public IEnumerable<WeatherForecast> Get()
@@ -50,6 +53,7 @@ namespace CampusVirtualWebApi.Controllers
             return ListWeatherForecast;
         }
 
+        /// Manejo de rutas, dataannotetion y swagger
         [HttpPost]
         [Route("PostWeatherForecast")]
         public IActionResult Post(WeatherForecast weatherForecast)
@@ -59,6 +63,7 @@ namespace CampusVirtualWebApi.Controllers
             return Ok();
         }
 
+        /// Manejo de rutas, dataannotetion y swagger
         [HttpDelete]
         [Route("DeleteWeatherForecast/{index}")]
         public IActionResult Delete(int index)
