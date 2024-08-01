@@ -19,5 +19,5 @@ Contiene codigo C# para API REST:
 * API REST
 
 
-Resibira actualizaciones semanales o diarias: **Este readme.md se realiza con la finalidad de informar**.
+Recibira actualizaciones semanales o diarias: **Este readme.md se realiza con la finalidad de informar**.
 
